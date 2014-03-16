@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*
+This General Public License does not permit incorporating your program into
+proprietary programs.  If your program is a subroutine library, you may
+consider it more useful to permit linking proprietary applications with the
+library.  If this is what you want to do, use the GNU Lesser General
+Public License instead of this License.
+*/
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
