@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="MediaSyncControl.UI.SerieBrowser"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             >
+    <Grid HorizontalAlignment="Left" MinWidth="840" Height="Auto" MaxHeight="800" VerticalAlignment="Stretch">
+        <Grid.Background>
+            <SolidColorBrush Color="White" Opacity="0.3"/>
+        </Grid.Background>
+        <ComboBox x:Name="combSerieList" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="365" DropDownOpened="combSerieList_DropDownOpened" SelectionChanged="combSerieList_SelectionChanged"/>
+        <DockPanel Grid.Row="0" VerticalAlignment="Stretch">
+            <DataGrid 
+                x:Name="gvEpisodeList" 
+                Margin="10,37,10,10" 
+                AutoGenerateColumns="False" 
+                ItemsSource="{Binding}" 
+                HorizontalAlignment="Left" 
+                HorizontalContentAlignment="Stretch" 
+                VerticalContentAlignment="Stretch" 
+                Background="{x:Null}" 
+                MinWidth="365" 
+                Width="Auto" 
+                MinHeight="100" >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="EpisodeID" IsReadOnly="True" Binding="{Binding EpisodeID}" Visibility="Hidden"></DataGridTextColumn>
+                    <DataGridTextColumn Header="EpisodeName" IsReadOnly="True" Binding="{Binding EpisodeName}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Season" IsReadOnly="True" Binding="{Binding Season}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="% gezien" IsReadOnly="True" Binding="{Binding seen}"></DataGridTextColumn>
+                    <DataGridCheckBoxColumn Header="Gezien" IsReadOnly="True" Binding="{Binding Gezien}" Visibility="Hidden"></DataGridCheckBoxColumn>
+                </DataGrid.Columns>
+                <DataGrid.RowStyle>
+                    <Style TargetType="{x:Type DataGridRow}">
+                        <EventSetter Event="MouseDoubleClick" Handler="resultDataGrid_MouseDoubleClick"/>
+                    </Style>
+                </DataGrid.RowStyle>
+            </DataGrid>
+        </DockPanel>
+    </Grid>
+</UserControl>

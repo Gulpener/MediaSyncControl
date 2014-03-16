@@ -1,0 +1,61 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:UI="clr-namespace:MediaSyncControl.UI" 
+        x:Name="MediaSyncControl" 
+        x:Class="MediaSyncControl.MainWindow"
+        Title="MediaSyncControl" Width="600" Height="640" SizeToContent="WidthAndHeight" MinHeight="480" MinWidth="500" Closing="MediaSyncControl_Closing">
+    <Window.Background>
+        <RadialGradientBrush>
+            <GradientStop Color="#FF000236" Offset="0.653"/>
+            <GradientStop Color="Black" Offset="1"/>
+        </RadialGradientBrush>
+    </Window.Background>
+    <Grid>
+        <TabControl 
+            VerticalContentAlignment="Stretch" 
+            HorizontalContentAlignment="Left" 
+            HorizontalAlignment="Stretch" 
+            VerticalAlignment="Stretch">
+            
+            <TabControl.Background>
+                <SolidColorBrush Color="White" Opacity="0"/>
+            </TabControl.Background>
+            <TabItem Header="Mediaplayer" 
+                     VerticalContentAlignment="Stretch" 
+                     HorizontalContentAlignment="Stretch"
+                     >
+                <Grid>
+                    <UI:InHouseMediaPlayer x:Name="inHouseMediaPlayer" Margin="0,0,0,0"
+                                     HorizontalAlignment="Stretch" 
+                                     VerticalAlignment="Stretch" 
+                                     VerticalContentAlignment="Stretch" 
+                                     HorizontalContentAlignment="Stretch"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Browser" 
+                     VerticalContentAlignment="Stretch" 
+                     HorizontalContentAlignment="Left">
+                <Grid>
+                    <UI:SerieBrowser Margin="0,0,0,0" Grid.Column="0" 
+                                     HorizontalAlignment="Stretch" 
+                                     VerticalAlignment="Stretch" 
+                                     VerticalContentAlignment="Top" 
+                                     HorizontalContentAlignment="Left"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="AddSerie" 
+                     VerticalContentAlignment="Stretch" 
+                     HorizontalContentAlignment="Left">
+                <Grid>
+                    <UI:AddSerie Margin="0,0,0,0" Grid.Column="1" 
+                                 HorizontalAlignment="Stretch" 
+                                 VerticalAlignment="Stretch" 
+                                 VerticalContentAlignment="Top" 
+                                 HorizontalContentAlignment="Left"/>
+                </Grid>
+            </TabItem>
+
+        </TabControl>
+    </Grid>
+</Window>
